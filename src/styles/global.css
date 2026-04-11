@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+/* Añade variables personalizadas de colores a tailwind, en este caso de la paltea de colores*/
+
+@theme {
+  --color-primary: #061E29;
+  --color-bg: #F2EFE7;
+  --color-secondary: #9ACBD0;
+  --color-terciary: #48A6A7;
+  --color-fourty: #006A71;
+}

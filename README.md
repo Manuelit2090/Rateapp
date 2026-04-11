@@ -8,7 +8,7 @@ Es una plataforma web innovadora que optimiza la conexión entre la oferta gastr
 
 ## Logo 🖼️
 
-![image.png](public/logo.ico)
+![image.png](public/Rateapp.ico)
 =======
 # Astro Starter Kit: Basics
 

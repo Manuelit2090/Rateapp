@@ -1,11 +1,38 @@
 @import "tailwindcss";
 
-/* Añade variables personalizadas de colores a tailwind, en este caso de la paltea de colores*/
 
+
+
+/* Añade variables personalizadas de colores a tailwind, en este caso de la paltea de colores*/
 @theme {
   --color-primary: #061E29;
   --color-bg: #F2EFE7;
   --color-secondary: #9ACBD0;
   --color-terciary: #48A6A7;
   --color-fourty: #006A71;
+}
+
+/* Animacion para pasar entre paginas */
+@view-transition {
+  navigation: auto;
+}
+
+/* 1. Definir las animaciones de deslizamiento */
+@keyframes slide-to-left {
+  from { transform: translateX(0); }
+  to { transform: translateX(-100%); }
+}
+
+@keyframes slide-from-right {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+/* 2. Aplicarlas a la página completa (root) */
+::view-transition-old(root) {
+  animation: 0.3s ease-in-out both slide-to-left;
+}
+
+::view-transition-new(root) {
+  animation: 0.3s ease-in-out both slide-from-right;
 }

@@ -1,0 +1,64 @@
+---
+import "../styles/global.css";
+---
+<script>
+const page = window.location.pathname;
+var linkElements = {
+  home: document.getElementById("home-link"),
+  rewards: document.getElementById("rewards-link"),
+  store: document.getElementById("store-link")
+};
+if (page === "/") {
+  if (linkElements.home) linkElements.home.classList.add("border-b-terciary", "border-b-2","text-fourty");
+} else if (page === "/Rewards/") {
+  if (linkElements.rewards) linkElements.rewards.classList.add("border-b-terciary", "border-b-2","text-fourty");
+} else if (page === "/Store/") {
+  if (linkElements.store) linkElements.store.classList.add("border-b-terciary", "border-b-2","text-fourty");
+} else {
+  document.title = "GastroLink";
+}
+
+</script>
+
+<nav
+  class=" fixed  bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 bg-[#fcf9f1]/90 dark:bg-stone-950/90 backdrop-blur-xl border-t border-stone-200/10 shadow-[0px_-12px_32px_rgba(28,28,23,0.06)] rounded-t-4xl max-w-full left-1/2 -translate-x-1/2"
+>
+  <a href="/"
+    class=" p-1 flex flex-col items-center justify-center text-stone-400 dark:text-stone-600 hover:text-fourty transition-colors active:scale-90 duration-300"
+    id="home-link"
+  >
+    <span class="material-symbols-outlined" data-icon="home">home</span>
+    <span
+      class="font-['Inter'] font-medium text-[11px] uppercase tracking-wider"
+      >Home</span
+    >
+  </a>
+
+  <a href="/Rewards/"
+   class=" p-1 flex flex-col items-center justify-center text-stone-400 dark:text-stone-600 hover:text-fourty transition-colors active:scale-90 duration-300"
+   id="rewards-link"
+
+  >
+    <span
+      class="material-symbols-outlined"
+      data-icon="person"
+     >person</span
+    >
+    <span
+      class="font-['Inter'] font-medium text-[11px] uppercase tracking-wider"
+      >Profile</span
+    >
+  </a>
+  <a href="/Store/"
+    class=" p-1 flex flex-col items-center justify-center text-stone-400 dark:text-stone-600 hover:text-fourty transition-colors active:scale-90 duration-300"
+    id="store-link"
+  >
+    <span class="material-symbols-outlined" data-icon="store">store</span>
+    <span
+      class="font-['Inter'] font-medium text-[11px] uppercase tracking-wider"
+      >Store</span
+    >
+  </a>
+</nav>
+
+

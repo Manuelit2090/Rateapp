@@ -1,0 +1,12 @@
+---
+import "../../styles/global.css";
+const categories = ["Restaurantes", "Cafeterías", "Bares", "Postres"];
+---
+
+<section class="flex gap-3 overflow-x-auto no-scrollbar -mx-4 px-4">
+  {categories.map((category) => (
+    <button class="flex-none px-6 py-2 bg-secondary hover:bg-terciary focus:bg-terciary text-white rounded-full font-headline font-semibold text-sm shadow-md active:scale-95">
+      {category}
+    </button>
+  ))}
+</section>

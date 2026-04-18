@@ -1,3 +1,9 @@
+---
+import '../styles/global.css'
+const {name} = Astro.props
+---
+
+
 <!doctype html>
 <html lang="en">
 	<head>
@@ -5,8 +11,20 @@
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
+		 <link
+            href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&family=Inter:wght@500;600&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+            rel="stylesheet"
+        />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<title>{name}</title>
 	</head>
 	<body>
 		<slot />

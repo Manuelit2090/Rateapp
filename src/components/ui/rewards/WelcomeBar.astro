@@ -1,0 +1,35 @@
+---
+import "../../../styles/global.css"
+
+const {name,stateMembers} = Astro.props
+---
+
+<section class="my-4">
+    <div class="flex justify-between items-end">
+        <div>
+            <p
+                class="text-secondary font-medium tracking-wide text-sm mb-1"
+            >
+                BIENVENIDO DE VUELTA
+            </p>
+            <h1
+                class="text-3xl font-extrabold tracking-tight text-primary"
+            >
+                Hola,{name}
+            </h1>
+        </div>
+        <div
+            class="bg-primary/10 px-4 py-1.5 rounded-full flex items-center gap-2 mb-1"
+        >
+            <span
+                class="material-symbols-outlined text-sm text-primary"
+                style="font-variation-settings: 'FILL' 1;"
+                >workspace_premium</span
+            >
+            <span
+                class="text-[10px] font-bold uppercase tracking-widest text-primary"
+                >{stateMembers}</span
+            >
+        </div>
+    </div>
+</section>

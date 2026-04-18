@@ -1,0 +1,73 @@
+---
+import "../styles/global.css";
+import Navbar from "../components/navbar.astro";
+import HeaderUI from "../components/header.astro";
+import CardCoupon from "../components/ui/store/CardCoupon.astro";
+import GeneralBalanceCard from "../components/ui/store/GeneralBalanceCard.astro";
+---
+
+<section class="bg-background font-body text-on-surface min-h-screen pb-32">
+    <!-- TopAppBar -->
+    <HeaderUI />
+    <main class="px-6 py-24 space-y-8 max-w-full mx-auto flex flex-col justify-center items-center">
+        <!-- GeneralBalanceCard -->
+        <GeneralBalanceCard />
+        <!-- CategoryStore -->
+        <section class="flex gap-3 overflow-x-auto no-scrollbar py-2">
+            <button
+                class="shrink-0 px-6 py-2.5 rounded-full bg-secondary text-on-secondary text-sm font-semibold shadow-md"
+                >Todos</button
+            >
+            <button
+                class="shrink-0 px-6 py-2.5 rounded-full bg-surface-container-high text-on-surface-variant text-sm font-semibold hover:bg-surface-container-highest transition-colors"
+                >Alta Cocina</button
+            >
+            <button
+                class="shrink-0 px-6 py-2.5 rounded-full bg-surface-container-high text-on-surface-variant text-sm font-semibold hover:bg-surface-container-highest transition-colors"
+                >Hamburguesas</button
+            >
+            <button
+                class="shrink-0 px-6 py-2.5 rounded-full bg-surface-container-high text-on-surface-variant text-sm font-semibold hover:bg-surface-container-highest transition-colors"
+                >Italiano</button
+            >
+        </section>
+        <!--CouponList -->
+        <section class="space-y-6">
+            <div class="flex justify-between items-end">
+                <h3
+                    class="text-2xl font-headline font-bold text-primary tracking-tight"
+                >
+                    Explorar Cupones
+                </h3>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                <!-- Coupon Card 1 -->
+                <CardCoupon
+                    couponName="El Cielo"
+                    couponDescription="20% de descuento en platos fuertes de nuestra carta de temporada."
+                    pointsRequired={500}
+                    couponImage="https://lh3.googleusercontent.com/aida-public/AB6AXuAJvwwDKWEpxyQ-o1gB6vQRkoInro1wyR0rZKn6Q5k_nNQRdPeTOiIjNGn7p9iv7X3fTO87my-M9pnR7BKgFBvv1I9bmIurM0_yjeiUH8JONIDytvNRM03CXyAc5ty7VuLSJ6In_n04LyiT_bvCAL5wrVxV_iLrIcncwUIglXpoTIgAEjNvUQRurjH556MrcmSrcoaWahc_kucTOrsscDaO5aURFdH7UiVhh3LJk6lMyYa_9FJ0JMwzo4JIHbAPIveZL_bj1riBZPb6"
+                    couponCategory="Alta Cocina"
+                />
+                <!-- Coupon Card 2 -->
+                <CardCoupon
+                    couponName="Burger MasterPiece"
+                    couponDescription="Bebida de cortesía (Cerveza artesanal o Soda de la casa) por la compra de cualquier combo."
+                    pointsRequired={300}
+                    couponImage="https://lh3.googleusercontent.com/aida-public/AB6AXuAlg_bvm2ZuVqo1FjjAAAOT6JjySP6Q-hTWSa8y8RIbHlEDodktygOgckwsVbka1mJoaBRcY2gsMESohhrmrJMfNTgxkpf-Mj98ZJ7IaeeMyHhqlBPjEVqNmOPXIte2YFli0KJm1z66IlRXLvs45GhwnBLusIml45TE85FJLQoebnVFqD1JENSyNKxcIYsh8IgkewHVAF4ubslYTnvDTset9HF69Buv9U_BDZA9xkhlCqy1FfnGgz7RIl5w3B73ihbuJiUNISzW9_wD"
+                    couponCategory="Comida Rápida"
+                />
+                <!-- Coupon Card 3 -->
+                <CardCoupon
+                    couponName="Il Forno"
+                    couponDescription="Postre gratis por consumos mayores a $50k en nuestra carta de pastas."
+                    pointsRequired={400}
+                    couponImage="https://lh3.googleusercontent.com/aida-public/AB6AXuB1x7Z4ClXq_aZb2smMAYRQIdT9rVrMp-rKJOTVjKPo7qdPa4oiRDHuOgXv48NHnCeu7zjeeGmExu4fwiusQ49yHd73xdJoZPfrr_0k5IfX7PAmnAvhDg1DGUEBt-DnLpbpGW41AHyvQG1XwF0xJ1TXmsFcP7B82xiF64Ld2ZPWpPvFE_WXPPku2cLguSNttDDscVM0rMYTaVwtpdAO4knAX4JaLLvJNVa89WzI6mJVxu0dQqUhytfQHmoTZJmu_q7uIiSXN6OS9DeP"
+                    couponCategory="Postres"
+                />
+            </div>
+        </section>
+    </main>
+    <!-- BottomNavBar -->
+    <Navbar />
+</section>

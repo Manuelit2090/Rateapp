@@ -1,0 +1,43 @@
+---
+import "../../styles/global.css";
+
+const {
+    restaurantName,
+    restaurantReviews,
+    restaurantImage,
+    restaurantDescription,
+    restaurantCategory,
+} = Astro.props;
+---
+
+<div
+    class="flex-none w-60 relative aspect-4/5 rounded-4xl overflow-hidden group shadow-xl"
+>
+    <img
+        src={restaurantImage}
+        class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+        alt={restaurantCategory}
+    />
+    <div class="absolute inset-0 bg-linear-to-t from-black/80 via-transparent">
+    </div>
+    <div
+        class="absolute top-4 left-4 bg-primary text-white px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase"
+    >
+        {restaurantCategory}
+    </div>
+    <div class="absolute bottom-6 left-6 text-white">
+        <div
+            class="flex items-center gap-1 bg-white/20 backdrop-blur-md px-2 py-0.5 rounded mb-2 w-fit"
+        >
+            <span
+                class="material-symbols-outlined text-yellow-400 text-sm"
+                style="font-variation-settings: 'FILL' 1">star</span
+            >
+            <span class="text-xs font-bold">{restaurantReviews}</span>
+        </div>
+        <h3 class="text-xl font-headline font-extrabold leading-tight">
+            {restaurantName}
+        </h3>
+        <p class="text-white/80 text-sm">{restaurantDescription}</p>
+    </div>
+</div>

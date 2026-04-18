@@ -1,0 +1,95 @@
+---
+import "../styles/global.css";
+import astroLogo from "../assets/astro.svg";
+import background from "../assets/background.svg";
+
+import CardRestaurant from "./ui/CardRestaurant.astro";
+import HeaderUi from "./header.astro";
+import SearchBar from "./ui/SearchBar.astro";
+import Navbar from "./navbar.astro";
+import ListCategories from "./ui/listCategories.astro";
+import SecondCardRestaurant from "./ui/SecondCardRestaurant.astro";
+import PremiumCardRestaurant from "./ui/PremiumCardRestaurant.astro";
+---
+
+<section
+	class="bg-bg text-on-surface font-body max-w-auto mx-auto overflow-x-hidden pb-34 min-h-dvh"
+>
+	<HeaderUi />
+
+	<main class="mt-20 px-4 space-y-8">
+		<SearchBar />
+
+		<ListCategories />
+
+		<section class="space-y-4">
+			<section class="space-y-4">
+				<div class="flex justify-between items-end">
+					<h2
+						class="text-xl font-headline font-extrabold tracking-tight text-on-surface"
+					>
+						Restaurantes Premium
+					</h2>
+					
+					
+				</div>
+				<div
+					class="flex gap-4 overflow-x-auto no-scrollbar -mx-4 px-4 pb-2"
+				>
+					<!-- Premium Card 1 -->
+					<PremiumCardRestaurant
+						restaurantName="Carmen Medellín"
+						restaurantImage="https://lh3.googleusercontent.com/aida-public/AB6AXuDTjlkt1O30d8UPO9QaPRRI6-rdoQ3gU1Xu_mS-oKtOvMVYb6eK7gIQbUi_hvTozmE7yQo_2hUjqOVnswSsMZzyP8AnbJRVaIubmAmAuHE8Ks-kcKMMBFbOdTkV8gR7b8Pq-OYvh5aAoxllbzLNnhYiFYwazxb4yBjcQH02A0UjGG9shY2cvjwz6ZsOc_s3jjIjSobpH67YQBLuM8OigNAd83koZS89c5XYr0tmA_muKy0KngPgZclg_irW9JKjaFK8oEjJ3FDpSj4"
+						restaurantDescription="Cocina de Autor Contemporánea"
+					/>
+
+				
+					<!-- Premium Card 2 -->
+					<PremiumCardRestaurant
+						restaurantName="Oci.Mde"
+						restaurantImage="https://lh3.googleusercontent.com/aida-public/AB6AXuDVKLxnM393iBjw-HhpP5NtgFmJi29thB0jT5ecqgYxybRaj6U6_Pi9OYH-6Wa_OkfEwLPe2aEftsk9OOkqf0LipVpiIQWKSj93CmHuqAodOTlcnznarVE1caz0a0Jl2_5ctCR_jCggpsAC1c1yrWdxqBSzGb_U34eUF50HuUiRGMdC_0xdRwmi8yp6z2-onysjLHtsbUnMyHdNq_mCgcXorYRWEQnq-LeTgZCzch4eodWU4q_gKImiTeNJm5BOx-CmVzXBBHCGt74"
+						restaurantDescription="Slow Cook &amp; Craft Cocktails"
+					/>
+						
+				</div>
+			</section>
+
+			<div class="flex justify-between items-end">
+				<h2 class="text-2xl font-headline font-bold text-on-surface">
+					Recomendados
+				</h2>
+				<button class="text-secondary font-semibold text-sm"
+					>Ver todos</button
+				>
+			</div>
+
+			<CardRestaurant
+				restaurantName="Burger MasterPiece"
+				restaurantCategory="Comida Rapida"
+				restaurantReviews="4.5"
+				restaurantDescription="Negocio de comida rapida"
+				restaurantImage="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNAZ9hrpHdZfTdt32mVuePi3S9jSNECyDcAg&s"
+			/>
+		</section>
+
+		<section>
+			<h2 class="text-2xl font-headline font-bold text-on-surface">
+				Cerca de ti
+			</h2>
+
+			<SecondCardRestaurant
+				restaurantName="El Cielo Cocina"
+				restaurantCategory="Comida Fusión"
+				restaurantReviews="4.5"
+				restaurantImage="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=600"
+			/>
+		</section>
+
+		<button
+			class="fixed bottom-28 right-6 w-14 h-14 bg-secondary text-white rounded-2xl flex items-center justify-center shadow-lg z-40 active:scale-90 transition-transform"
+		>
+			<span class="material-symbols-outlined text-3xl">arrow_upward</span>
+		</button>
+		<Navbar />
+	</main>
+</section>

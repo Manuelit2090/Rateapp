@@ -1,0 +1,46 @@
+---
+import "../styles/global.css"
+import Navbar from "./navbar.astro"
+import HeaderUi from "./header.astro";
+import WelcomeBar from "./ui/rewards/welcomeBar.astro";
+import PointsCard from "./ui/rewards/pointsCard.astro";
+import BadgestsCard from "./ui/rewards/BadgestsCard.astro";
+import UnlockCoupons from "./ui/rewards/UnlockCoupons.astro";
+import GainPoints from "./ui/rewards/gainPonts.astro";
+---
+
+
+    <section
+        class="bg-background text-on-background min-h-screen pb-32 max-w-full mx-auto overflow-x-hidden shadow-2xl"
+    >
+    <HeaderUi/>
+        <!-- TopAppBar -->
+        
+        <main class="pt-20 px-6 space-y-8">
+            <!--welcomeBar -->
+            <WelcomeBar name="Mateo"  stateMembers="Miembro Premium" />
+        
+            <!-- pointsCard -->
+            <div class="grid grid-cols-1 md:grid-cols-2 md:grid-rows-2 gap-12">
+               <div class="md:row-span-2">
+                    <PointsCard/>
+                </div>
+                
+                <BadgestsCard/>
+            </div>
+            <!-- Badgests -->
+           
+            <!-- UnlockCoupons -->
+            <UnlockCoupons/>
+           
+            <!-- gainPoints -->
+           <GainPoints/>
+            <button
+                class="w-full py-5 bg-gradient-to-br from-primary to-primary-container rounded-xl text-white font-bold text-sm tracking-widest uppercase shadow-xl active:scale-95 duration-200"
+            >
+                Ver Misiones Diarias
+            </button>
+        </main>
+   
+   <Navbar/>
+    </section>

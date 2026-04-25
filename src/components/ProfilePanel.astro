@@ -1,46 +1,97 @@
 ---
-import "../styles/global.css"
-import Navbar from "./navbar.astro"
+import "../styles/global.css";
+import Navbar from "./navbar.astro";
 import HeaderUi from "./header.astro";
-import WelcomeBar from "./ui/rewards/welcomeBar.astro";
+import WelcomeBar from "./ui/rewards/WelcomeBar.astro";
 import PointsCard from "./ui/rewards/pointsCard.astro";
 import BadgestsCard from "./ui/rewards/BadgestsCard.astro";
 import UnlockCoupons from "./ui/rewards/UnlockCoupons.astro";
-import GainPoints from "./ui/rewards/gainPonts.astro";
+import GainPoints from "./ui/rewards/GainPonts.astro";
 ---
 
+<section
+    class="bg-background text-on-background min-h-screen pt-12 pb-32 max-w-full mx-auto overflow-x-hidden shadow-2xl"
+>
+    <HeaderUi />
+    <!-- TopAppBar -->
 
-    <section
-        class="bg-background text-on-background min-h-screen pb-32 max-w-full mx-auto overflow-x-hidden shadow-2xl"
-    >
-    <HeaderUi/>
-        <!-- TopAppBar -->
-        
-        <main class="pt-20 px-6 space-y-8">
-            <!--welcomeBar -->
-            <WelcomeBar name="Mateo"  stateMembers="Miembro Premium" />
-        
-            <!-- pointsCard -->
-            <div class="grid grid-cols-1 md:grid-cols-2 md:grid-rows-2 gap-12">
-               <div class="md:row-span-2">
-                    <PointsCard/>
+    <main class="pt-20 px-6 space-y-8">
+        <!--welcomeBar -->
+        <WelcomeBar name="Mateo" stateMembers="Miembro Premium" />
+
+        <!-- pointsCard -->
+        <div class="grid grid-cols-1 md:grid-cols-2 md:grid-rows-2 gap-12">
+            <div class="md:row-span-2">
+                <div class="hover-3d w-full">
+                    <!-- content -->
+
+                    <PointsCard />
+
+                    <!-- 8 empty divs needed for the 3D effect -->
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
                 </div>
-                
-                <BadgestsCard/>
             </div>
-            <!-- Badgests -->
-           
-            <!-- UnlockCoupons -->
-            <UnlockCoupons/>
-           
-            <!-- gainPoints -->
-           <GainPoints/>
-            <button
-                class="w-full py-5 bg-gradient-to-br from-primary to-primary-container rounded-xl text-white font-bold text-sm tracking-widest uppercase shadow-xl active:scale-95 duration-200"
-            >
-                Ver Misiones Diarias
-            </button>
-        </main>
-   
-   <Navbar/>
-    </section>
+
+            <div class="hover-3d w-full">
+                <!-- content -->
+
+                <BadgestsCard />
+
+                <!-- 8 empty divs needed for the 3D effect -->
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+
+            <div class="hover-3d w-full">
+                <!-- content -->
+
+                <div
+                    class="stats bg-accent-content/30 rounded-4xl p-6 shadow-sm"
+                >
+                    <div class="stat">
+                        <div class="stat-title">Total de reseñas</div>
+                        <div class="stat-value">15</div>
+                        <div class="stat-desc">15% mas que el mes anterior</div>
+                    </div>
+                </div>
+
+                <!-- 8 empty divs needed for the 3D effect -->
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <!-- Badgests -->
+
+        <!-- UnlockCoupons -->
+        <UnlockCoupons />
+
+        <!-- gainPoints -->
+        <GainPoints />
+        <button
+            class="w-full py-5 bg-gradient-to-br from-primary to-primary-container rounded-xl text-white font-bold text-sm tracking-widest uppercase shadow-xl active:scale-95 duration-200"
+        >
+            Ver Misiones Diarias
+        </button>
+    </main>
+
+    <Navbar />
+</section>

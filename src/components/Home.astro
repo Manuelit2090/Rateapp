@@ -5,9 +5,9 @@ import background from "../assets/background.svg";
 
 import CardRestaurant from "./ui/CardRestaurant.astro";
 import HeaderUi from "./header.astro";
-import SearchBar from "./ui/SearchBar.astro";
+
 import Navbar from "./navbar.astro";
-import ListCategories from "./ui/listCategories.astro";
+import Banner from "./ui/banner.astro";
 import SecondCardRestaurant from "./ui/SecondCardRestaurant.astro";
 import PremiumCardRestaurant from "./ui/PremiumCardRestaurant.astro";
 ---
@@ -17,12 +17,12 @@ import PremiumCardRestaurant from "./ui/PremiumCardRestaurant.astro";
 >
 	<HeaderUi />
 
-	<main class="mt-20 px-4 space-y-8">
-		<SearchBar />
-
-		<ListCategories />
+	
+	<main class="mt-20 pt-12 px-4 space-y-8">
+		<Banner/>
 
 		<section class="space-y-4">
+			<!-- Restaurantes Premium -->
 			<section class="space-y-4">
 				<div class="flex justify-between items-end">
 					<h2
@@ -30,8 +30,6 @@ import PremiumCardRestaurant from "./ui/PremiumCardRestaurant.astro";
 					>
 						Restaurantes Premium
 					</h2>
-					
-					
 				</div>
 				<div
 					class="flex gap-4 overflow-x-auto no-scrollbar -mx-4 px-4 pb-2"
@@ -43,46 +41,53 @@ import PremiumCardRestaurant from "./ui/PremiumCardRestaurant.astro";
 						restaurantDescription="Cocina de Autor Contemporánea"
 					/>
 
-				
 					<!-- Premium Card 2 -->
 					<PremiumCardRestaurant
 						restaurantName="Oci.Mde"
 						restaurantImage="https://lh3.googleusercontent.com/aida-public/AB6AXuDVKLxnM393iBjw-HhpP5NtgFmJi29thB0jT5ecqgYxybRaj6U6_Pi9OYH-6Wa_OkfEwLPe2aEftsk9OOkqf0LipVpiIQWKSj93CmHuqAodOTlcnznarVE1caz0a0Jl2_5ctCR_jCggpsAC1c1yrWdxqBSzGb_U34eUF50HuUiRGMdC_0xdRwmi8yp6z2-onysjLHtsbUnMyHdNq_mCgcXorYRWEQnq-LeTgZCzch4eodWU4q_gKImiTeNJm5BOx-CmVzXBBHCGt74"
-						restaurantDescription="Slow Cook &amp; Craft Cocktails"
+						restaurantDescription="Slow Cook & Craft Cocktails"
 					/>
-						
 				</div>
 			</section>
+			
+			
 
-			<div class="flex justify-between items-end">
+			<!-- Cerca de ti -->
+			<section>
 				<h2 class="text-2xl font-headline font-bold text-on-surface">
-					Recomendados
+					Cerca de ti
 				</h2>
-				<button class="text-secondary font-semibold text-sm"
-					>Ver todos</button
-				>
-			</div>
 
-			<CardRestaurant
-				restaurantName="Burger MasterPiece"
-				restaurantCategory="Comida Rapida"
-				restaurantReviews="4.5"
-				restaurantDescription="Negocio de comida rapida"
-				restaurantImage="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNAZ9hrpHdZfTdt32mVuePi3S9jSNECyDcAg&s"
-			/>
-		</section>
+					<CardRestaurant
+					restaurantName="Burger MasterPiece"
+					restaurantCategory="Comida Rapida"
+					restaurantReviews="4.5"
+					restaurantDescription="Negocio de comida rapida"
+					restaurantImage="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNAZ9hrpHdZfTdt32mVuePi3S9jSNECyDcAg&s"
+				/>
+			</section>
 
-		<section>
-			<h2 class="text-2xl font-headline font-bold text-on-surface">
-				Cerca de ti
-			</h2>
+			<!-- Recomendados -->
+			<section>
+				<div class="flex justify-between items-end">
+					<h2
+						class="text-2xl font-headline font-bold text-on-surface"
+					>
+						Recomendados
+					</h2>
+					<button class="text-secondary font-semibold text-sm"
+						>Ver todos</button
+					>
+				</div>
+				<SecondCardRestaurant
+					restaurantName="El Cielo Cocina"
+					restaurantCategory="Comida Fusión"
+					restaurantReviews="4.5"
+					restaurantImage="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=600"
+				/>
 
-			<SecondCardRestaurant
-				restaurantName="El Cielo Cocina"
-				restaurantCategory="Comida Fusión"
-				restaurantReviews="4.5"
-				restaurantImage="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=600"
-			/>
+			
+			</section>
 		</section>
 
 		<button

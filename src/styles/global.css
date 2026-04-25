@@ -1,17 +1,16 @@
 @import "tailwindcss";
 
+@plugin "daisyui";
 
-
-
-/* Añade variables personalizadas de colores a tailwind, en este caso de la paltea de colores*/
-@theme {
-  --color-primary: #061E29;
-  --color-bg: #F2EFE7;
-  --color-secondary: #9ACBD0;
-  --color-terciary: #48A6A7;
-  --color-fourty: #006A71;
+@plugin "daisyui" {
+  themes: all;
 }
 
+@plugin "daisyui/theme" {
+  name: "abyss";
+  default: true;
+  --color-secondary: #557311;
+}
 /* Animacion para pasar entre paginas */
 @view-transition {
   navigation: auto;

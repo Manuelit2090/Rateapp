@@ -3,16 +3,26 @@ import { getAuth, connectAuthEmulator } from 'firebase/auth';
 import { getFirestore, connectFirestoreEmulator } from 'firebase/firestore';
 import { getStorage, connectStorageEmulator } from 'firebase/storage';
 
-// Firebase configuration from environment variables
-const firebaseConfig = {
-  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
-  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
-  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
-  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
-  appId: import.meta.env.VITE_FIREBASE_APP_ID,
-  databaseURL: import.meta.env.VITE_FIREBASE_DATABASE_URL,
+// Firebase configuration from environment variables or window object
+const getFirebaseConfig = () => {
+  // Si viene de window (inyectado por Astro), usarlo
+  if (typeof window !== 'undefined' && window.firebaseConfig) {
+    return window.firebaseConfig;
+  }
+  
+  // Si no, intentar leer de import.meta.env (solo server-side)
+  return {
+    apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+    authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+    projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+    storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+    messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+    appId: import.meta.env.VITE_FIREBASE_APP_ID,
+    databaseURL: import.meta.env.VITE_FIREBASE_DATABASE_URL,
+  };
 };
+
+const firebaseConfig = getFirebaseConfig();
 
 // Validate Firebase configuration
 function validateFirebaseConfig(config) {
@@ -25,16 +35,17 @@ function validateFirebaseConfig(config) {
     'appId',
   ];
 
-  const missingKeys = requiredKeys.filter(
-    (key) => !config[key] || config[key].includes('your_')
-  );
+  const missingKeys = requiredKeys.filter((key) => {
+    const value = config[key];
+    return !value || (typeof value === 'string' && value.includes('your_'));
+  });
 
   if (missingKeys.length > 0) {
     console.warn(
       `⚠️  Firebase Configuration Warning: Missing or incomplete values for: ${missingKeys.join(', ')}`
     );
+    console.warn('Received config:', config);
     console.warn('Please update your .env.local file with correct Firebase credentials');
-    return false;
   }
 
   return true;
@@ -57,10 +68,8 @@ export function initializeFirebase() {
       return { app, auth, db, storage };
     }
 
-    // Validate configuration
-    if (!validateFirebaseConfig(firebaseConfig)) {
-      throw new Error('Invalid Firebase configuration. Check your .env.local file');
-    }
+    // Validate configuration (warning only, don't throw)
+    validateFirebaseConfig(firebaseConfig);
 
     // Initialize Firebase App
     app = initializeApp(firebaseConfig);

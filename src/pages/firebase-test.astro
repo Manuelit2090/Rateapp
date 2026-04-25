@@ -1,127 +1,33 @@
 ---
-import { initializeFirebase, getFirebaseServices } from '@/modules/connection/connectiodb';
+import FirebaseTestComponent from '../components/FirebaseTest.vue';
+
+// Obtener variables en el servidor
+const firebaseConfig = {
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
+  databaseURL: import.meta.env.VITE_FIREBASE_DATABASE_URL,
+};
+
+console.log('🔧 Config en servidor:', firebaseConfig);
 ---
 
-<div id="firebase-test">
-  <div class="container mx-auto max-w-2xl p-6">
-    <h1 class="text-3xl font-bold mb-6">🔧 Test Firebase</h1>
-    
-    <div class="space-y-4">
-      <div id="status" class="p-4 rounded-lg bg-gray-100 border-l-4 border-blue-500">
-        <h2 class="font-bold mb-2">Estado:</h2>
-        <p id="status-text">Verificando Firebase...</p>
-      </div>
-
-      <div id="config" class="p-4 rounded-lg bg-gray-100 border-l-4 border-green-500">
-        <h2 class="font-bold mb-2">Configuración:</h2>
-        <pre id="config-text" class="bg-white p-3 rounded text-sm overflow-auto max-h-64"></pre>
-      </div>
-
-      <div id="services" class="p-4 rounded-lg bg-gray-100 border-l-4 border-purple-500">
-        <h2 class="font-bold mb-2">Servicios Disponibles:</h2>
-        <ul id="services-list" class="space-y-2"></ul>
-      </div>
-
-      <button id="test-firestore" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-6 rounded">
-        🔄 Probar Firestore
-      </button>
-
-      <div id="results" class="p-4 rounded-lg bg-gray-100 border-l-4 border-yellow-500 hidden">
-        <h2 class="font-bold mb-2">Resultados:</h2>
-        <pre id="results-text" class="bg-white p-3 rounded text-sm overflow-auto max-h-64"></pre>
-      </div>
-    </div>
-  </div>
-</div>
-
-<script>
-  import { initializeFirebase, getFirebaseServices } from '@/modules/connection/connectiodb';
-  import { queryDocuments } from '@/modules/connection/firebaseQueries';
-
-  async function testFirebase() {
-    try {
-      console.log('🧪 Iniciando test de Firebase...');
-      
-      // 1. Inicializar Firebase
-      const services = initializeFirebase();
-      console.log('✅ Firebase inicializado:', services);
-
-      // 2. Verificar variables de entorno
-      const config = {
-        apiKey: import.meta.env.VITE_FIREBASE_API_KEY ? '✅ Configurado' : '❌ No configurado',
-        authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN ? '✅ Configurado' : '❌ No configurado',
-        projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID ? '✅ Configurado' : '❌ No configurado',
-        storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET ? '✅ Configurado' : '❌ No configurado',
-        messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID ? '✅ Configurado' : '❌ No configurado',
-        appId: import.meta.env.VITE_FIREBASE_APP_ID ? '✅ Configurado' : '❌ No configurado',
-      };
-
-      // 3. Actualizar UI
-      document.getElementById('status-text').innerHTML = '✅ Firebase conectado correctamente';
-      document.getElementById('status').classList.remove('bg-gray-100', 'border-blue-500');
-      document.getElementById('status').classList.add('bg-green-50', 'border-green-500');
-
-      document.getElementById('config-text').textContent = JSON.stringify(config, null, 2);
-
-      // 4. Mostrar servicios
-      const servicesList = document.getElementById('services-list');
-      servicesList.innerHTML = `
-        <li>✅ <strong>Auth:</strong> ${services.auth ? 'Disponible' : 'No disponible'}</li>
-        <li>✅ <strong>Firestore (db):</strong> ${services.db ? 'Disponible' : 'No disponible'}</li>
-        <li>✅ <strong>Storage:</strong> ${services.storage ? 'Disponible' : 'No disponible'}</li>
-      `;
-
-      console.log('✅ Test completado exitosamente');
-      
-    } catch (error) {
-      console.error('❌ Error en test:', error);
-      document.getElementById('status-text').innerHTML = `❌ Error: ${error.message}`;
-      document.getElementById('status').classList.remove('bg-gray-100', 'border-blue-500');
-      document.getElementById('status').classList.add('bg-red-50', 'border-red-500');
-    }
-  }
-
-  async function testFirestoreConnection() {
-    try {
-      const resultsDiv = document.getElementById('results');
-      const resultsText = document.getElementById('results-text');
-      
-      resultsDiv.classList.remove('hidden');
-      resultsText.textContent = '⏳ Intentando conexión a Firestore...';
-
-      // Intentar hacer una consulta simple
-      try {
-        const docs = await queryDocuments('test', [], 1);
-        resultsText.textContent = `✅ Conexión a Firestore exitosa!\n\nDocumentos encontrados: ${docs.length}`;
-      } catch (firestoreError) {
-        if (firestoreError.message.includes('does not exist')) {
-          resultsText.textContent = `✅ Firebase Auth y Config OK\n\n⚠️ La colección 'test' no existe aún (Normal en primera vez)\n\nCrear documentos para verificar completamente.`;
-        } else {
-          resultsText.textContent = `✅ Firebase conectado\n\n⚠️ ${firestoreError.message}`;
-        }
-      }
-    } catch (error) {
-      document.getElementById('results-text').textContent = `❌ Error: ${error.message}`;
-    }
-  }
-
-  // Ejecutar test al cargar
-  testFirebase();
-
-  // Agregar evento al botón
-  document.getElementById('test-firestore').addEventListener('click', testFirestoreConnection);
-</script>
-
-<style>
-  #firebase-test {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    min-height: 100vh;
-    padding: 2rem 0;
-  }
-
-  .container {
-    background: white;
-    border-radius: 1rem;
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-  }
-</style>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Firebase Test Page" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Test Firebase</title>
+  </head>
+  <body>
+    <!-- Inyectar config en window para que el cliente pueda acceder -->
+    <script define:vars={{ firebaseConfig }}>
+      window.firebaseConfig = firebaseConfig;
+      console.log('✅ Config inyectada en window:', window.firebaseConfig);
+    </script>
+    <FirebaseTestComponent client:load config={firebaseConfig} />
+  </body>
+</html>

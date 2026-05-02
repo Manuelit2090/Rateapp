@@ -1,412 +1,433 @@
 ---
 import "../styles/global.css";
 import Header from "../components/header.astro";
+
 ---
-<main class="pb-32 pt-16">
+
+<main class="pt-20">
     <Header />
     <!-- Hero Section -->
-    <section class="relative h-[530px] w-full overflow-hidden">
-                <div
-                    class="absolute inset-0 bg-gradient-to-t from-[#001718] via-transparent to-transparent z-10"
+    <section class="relative h-[614px] w-full overflow-hidden">
+
+        <div class="absolute inset-0">
+            <img
+                alt="Bistró 22 Interior"
+                class="w-full h-full object-cover brightness-50"
+                data-alt="A wide-angle interior shot of Bistró 22, a high-end futuristic restaurant featuring sleek deep teal surfaces and glowing neon green architectural accents. The atmosphere is immersive and cinematic, with moody, low-key lighting and a subtle haze that catches the neon glows. In the center, a large neon-lit logo of 'Bistró 22' hangs against a dark textured wall, reflecting the premium cyber-gastronomy brand identity."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAisaqUg_Qx5QXu1gjFLCO4EJesI1VjSspB2Rmzg_XAKZZnZH6nMGGgsUx4Ya00F0gNvarc1a71Mqqfvnb_tzWn4AMn1vpBCoCOhcCgMye77o5qaepfjGt0C_YFeHF7Te6YpC-rOsBK7anxUauVR-3h7nobh4lzQU0gEz0vibWQKwp3ggGCCrbfqG2YJBezPfsRPLnWjf1UO6NbW4kavY7R2ZWzLG12iv-GaVv0kSYha7j9Dk-dQVsgGZfxkqAJ45UtkPR0pWC8tR5Y"
+            />
+        </div>
+        <div
+            class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"
+        >
+        </div>
+        <div
+            class="relative h-full max-w-[1440px] mx-auto px-8 flex flex-col justify-center"
+        >
+            <div class="flex items-center gap-4 mb-4">
+                <span
+                    class="px-3 py-1 bg-[#CCFF00] text-[#161e00] font-label-lg text-label-lg rounded-full"
+                    >PREMIUM DESTINATION</span
                 >
-                </div>
-                <img
-                    class="w-full h-full object-cover"
-                    data-alt="A futuristic interior of a luxury restaurant with sleek dark teal surfaces and vibrant neon green lighting accents. The central wall features a massive, glowing neon typography sign that reads 'Bistró 22' in a stylized high-tech font. The atmosphere is immersive and high-energy with a deep cinematic aesthetic, shot from a low angle to emphasize the architectural scale and the moody, cyber-gastronomy vibe. Soft volumetric lighting fills the air, creating a premium digital lounge feel."
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQ0Y5x1NcNfRDw_EthEIC57MHGUT9WNVe620BvrP46zFcJHHOk-lSncG3U8CKiYOcJT4dyW58MbQnQzT5w9m2SHk2n3w98qpCT96zC6j00Ac3hIKrMVYZeORxCUwNFjs31FxXyRbIY4yTqk-t46NpYa2dlCEgEkIzXfRa018zqzSDuc_dr8B3jzEWHIfnAdz2usVO8avTYqV-9RMvcGyjyH2j-CvqB24CwaKr19GO2W0_gHnkyqHQ3eEkYcDlnv3NaWTC2ZVcFWSWJ"
-                />
-                <div
-                    class="absolute inset-0 z-20 flex flex-col justify-end px-margin pb-xl"
-                >
+            </div>
+            <h1
+                class="font-headline-xl text-headline-xl text-[#CCFF00] neon-text uppercase mb-2"
+            >
+                Bistró 22
+            </h1>
+            <p class="text-white/80 font-body-lg text-body-lg max-w-xl">
+                Elevating the senses through fusion technology and high-fidelity
+                culinary arts.
+            </p>
+        </div>
+    </section>
+    <!-- Content Grid -->
+    <section
+        class="max-w-[1440px] mx-auto px-8 py-16 grid grid-cols-1 md:grid-cols-12 gap-12"
+    >
+        <!-- Left Column: Business Info -->
+        <aside class="md:col-span-4 space-y-8">
+            <!-- Info Card -->
+            <div
+                class="bg-surface-container rounded-lg p-lg border border-white/5 space-y-6 shadow-xl"
+            >
+                <div class="flex items-center justify-between">
                     <span
-                        class="inline-block px-sm py-xs bg-[#CCFF00] text-[#001A1C] font-label-lg rounded-sm mb-md w-fit"
-                        >OPEN NOW</span
+                        class="font-headline-md text-headline-md text-[#CCFF00]"
+                        >4.9</span
                     >
-                    <h2 class="font-headline-xl text-primary neon-glow italic">
-                        Bistró 22
-                    </h2>
-                    <div class="flex items-center gap-sm mt-sm">
+                    <div class="flex text-[#CCFF00]">
                         <span
-                            class="material-symbols-outlined text-[#CCFF00] fill-1"
-                            data-icon="star"
+                            class="material-symbols-outlined"
                             style="font-variation-settings: 'FILL' 1;"
                             >star</span
                         >
-                        <p class="font-headline-md text-primary">4.9</p>
-                        <span class="text-white/40 font-body-md"
-                            >(2,482 Reviews)</span
+                        <span
+                            class="material-symbols-outlined"
+                            style="font-variation-settings: 'FILL' 1;"
+                            >star</span
+                        >
+                        <span
+                            class="material-symbols-outlined"
+                            style="font-variation-settings: 'FILL' 1;"
+                            >star</span
+                        >
+                        <span
+                            class="material-symbols-outlined"
+                            style="font-variation-settings: 'FILL' 1;"
+                            >star</span
+                        >
+                        <span
+                            class="material-symbols-outlined"
+                            style="font-variation-settings: 'FILL' 1;"
+                            >star_half</span
                         >
                     </div>
                 </div>
-            </section>
-            <!-- Info Section (Two Columns) -->
-            <section
-                class="px-margin py-xl grid grid-cols-1 md:grid-cols-2 gap-xl"
-            >
-                <!-- Left: Contact & Location -->
-                <div class="space-y-lg">
-                    <div class="glass-card rounded-lg p-lg space-y-md">
-                        <div class="flex items-center gap-md">
-                            <div
-                                class="w-10 h-10 rounded-full bg-[#CCFF00]/10 flex items-center justify-center text-[#CCFF00]"
-                            >
-                                <span
-                                    class="material-symbols-outlined"
-                                    data-icon="restaurant">restaurant</span
-                                >
-                            </div>
-                            <div>
-                                <p
-                                    class="text-white/50 text-xs font-label-md uppercase tracking-wider"
-                                >
-                                    Category
-                                </p>
-                                <p class="font-headline-md text-primary">
-                                    European Fusion
-                                </p>
-                            </div>
-                        </div>
-                        <div class="flex items-center gap-md">
-                            <div
-                                class="w-10 h-10 rounded-full bg-[#CCFF00]/10 flex items-center justify-center text-[#CCFF00]"
-                            >
-                                <span
-                                    class="material-symbols-outlined"
-                                    data-icon="call">call</span
-                                >
-                            </div>
-                            <div>
-                                <p
-                                    class="text-white/50 text-xs font-label-md uppercase tracking-wider"
-                                >
-                                    Phone
-                                </p>
-                                <p class="font-body-lg text-on-background">
-                                    +57 (311) 222-0022
-                                </p>
-                            </div>
-                        </div>
-                        <div class="flex items-center gap-md">
-                            <div
-                                class="w-10 h-10 rounded-full bg-[#CCFF00]/10 flex items-center justify-center text-[#CCFF00]"
-                            >
-                                <span
-                                    class="material-symbols-outlined"
-                                    data-icon="language">language</span
-                                >
-                            </div>
-                            <div>
-                                <p
-                                    class="text-white/50 text-xs font-label-md uppercase tracking-wider"
-                                >
-                                    Website
-                                </p>
-                                <p class="font-body-lg text-primary underline">
-                                    www.bistro22.com
-                                </p>
-                            </div>
-                        </div>
-                        <div
-                            class="flex items-start gap-md pt-md border-t border-white/5"
-                        >
-                            <div
-                                class="w-10 h-10 rounded-full bg-[#CCFF00]/10 flex items-center justify-center text-[#CCFF00] shrink-0"
-                            >
-                                <span
-                                    class="material-symbols-outlined"
-                                    data-icon="location_on">location_on</span
-                                >
-                            </div>
-                            <div>
-                                <p
-                                    class="text-white/50 text-xs font-label-md uppercase tracking-wider"
-                                >
-                                    Address
-                                </p>
-                                <p class="font-body-lg text-on-background">
-                                    Cra 43A #1-50, Medellín, Antioquia
-                                </p>
-                                <div
-                                    class="mt-md rounded-md overflow-hidden h-32 w-full relative"
-                                >
-                                    <img
-                                        class="w-full h-full object-cover grayscale opacity-50"
-                                        data-alt="A stylized, dark-themed satellite map of the Poblado district in Medellín. The map features high-contrast lines and a glowing neon green pin marking the location of Bistró 22. The aesthetic is clean and futuristic, matching the cyber-gastronomy interface of the app."
-                                        data-location="Medellín"
-                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcLJCuiB5hV_rbholxhSj1mUF1i7b9FHwoaMKuCoDwtMvegatqoXItcOK96KrV0NFE_JZ3lszBslICr-B7HieSLpSSpuIH1iwdpWr0cJNGChVM_nv-qVtyzzgtGG73KGHxCurCBHAcmHxxYythn3F4BjBJJ6i5-_BDDEkornfITvgSBCtUldWZoOxbdApTN4vsG4tAUTUIHU6Fwmky7QG1p8GiBd_PQV5t94F-Q54aBLfnGsKaILBmZNgL979_VWdANi8HB89XpC1I"
-                                    />
-                                    <div
-                                        class="absolute inset-0 bg-[#CCFF00]/5 flex items-center justify-center"
-                                    >
-                                        <span
-                                            class="material-symbols-outlined text-[#CCFF00] text-3xl"
-                                            data-icon="location_on"
-                                            style="font-variation-settings: 'FILL' 1;"
-                                            >location_on</span
-                                        >
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Right: Description -->
-                <div class="space-y-lg">
-                    <div class="glass-card rounded-lg p-lg h-full">
-                        <h3
-                            class="font-headline-lg text-[#CCFF00] mb-lg italic"
-                        >
-                            The Future of Flavor
-                        </h3>
-                        <p
-                            class="font-body-lg text-on-background/80 leading-relaxed"
-                        >
-                            Step into a realm where high-end culinary arts
-                            collide with a futuristic tech-driven interface.
-                            Bistró 22 isn't just a restaurant; it's a sensory
-                            immersion. Our chefs utilize molecular gastronomy
-                            techniques to redefine European classics, served in
-                            a high-contrast environment of deep teals and neon
-                            accents.
-                        </p>
-                        <p
-                            class="font-body-lg text-on-background/80 mt-md leading-relaxed"
-                        >
-                            Every plate is designed as a digital artifact—as
-                            much a visual masterpiece as it is a gastronomic
-                            delight. Experience the 'Cyber-Gastronomy' movement
-                            in the heart of Medellín.
-                        </p>
-                        <div class="mt-xl flex flex-wrap gap-sm">
-                            <span
-                                class="px-md py-xs rounded-full border border-[#CCFF00]/30 text-[#CCFF00] font-label-md"
-                                >Molecular Food</span
-                            >
-                            <span
-                                class="px-md py-xs rounded-full border border-[#CCFF00]/30 text-[#CCFF00] font-label-md"
-                                >Exclusive Atmosphere</span
-                            >
-                            <span
-                                class="px-md py-xs rounded-full border border-[#CCFF00]/30 text-[#CCFF00] font-label-md"
-                                >Gourmet Tech</span
-                            >
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- Rating Breakdown -->
-            <section class="px-margin py-xl bg-surface-container">
-                <h3 class="font-headline-lg text-primary mb-xl">
-                    Atmosphere &amp; Service
-                </h3>
-                <div class="grid grid-cols-2 lg:grid-cols-4 gap-lg">
+                <div class="space-y-4 pt-4 border-t border-white/5">
                     <div
-                        class="glass-card p-lg rounded-lg text-center border-b-4 border-[#CCFF00]"
+                        class="flex items-center gap-3 text-on-surface-variant"
                     >
-                        <p class="text-white/50 font-label-md uppercase mb-sm">
-                            Food Quality
-                        </p>
-                        <p class="font-headline-xl text-[#CCFF00]">5.0</p>
-                    </div>
-                    <div class="glass-card p-lg rounded-lg text-center">
-                        <p class="text-white/50 font-label-md uppercase mb-sm">
-                            Location
-                        </p>
-                        <p class="font-headline-xl text-primary">4.5</p>
+                        <span
+                            class="material-symbols-outlined text-[#CCFF00]"
+                            data-icon="restaurant">restaurant</span
+                        >
+                        <span class="font-label-lg text-label-lg"
+                            >European Fusion</span
+                        >
                     </div>
                     <div
-                        class="glass-card p-lg rounded-lg text-center border-b-4 border-[#CCFF00]"
+                        class="flex items-center gap-3 text-on-surface-variant"
                     >
-                        <p class="text-white/50 font-label-md uppercase mb-sm">
-                            Atmosphere
-                        </p>
-                        <p class="font-headline-xl text-[#CCFF00]">5.0</p>
+                        <span
+                            class="material-symbols-outlined text-[#CCFF00]"
+                            data-icon="call">call</span
+                        >
+                        <span class="font-label-lg text-label-lg"
+                            >+34 912 345 678</span
+                        >
                     </div>
-                    <div class="glass-card p-lg rounded-lg text-center">
-                        <p class="text-white/50 font-label-md uppercase mb-sm">
-                            Comfort
-                        </p>
-                        <p class="font-headline-xl text-primary">4.8</p>
+                    <div
+                        class="flex items-center gap-3 text-on-surface-variant"
+                    >
+                        <span
+                            class="material-symbols-outlined text-[#CCFF00]"
+                            data-icon="language">language</span
+                        >
+                        <span class="font-label-lg text-label-lg"
+                            >www.bistro22.io</span
+                        >
+                    </div>
+                    <div class="flex items-start gap-3 text-on-surface-variant">
+                        <span
+                            class="material-symbols-outlined text-[#CCFF00]"
+                            data-icon="location_on">location_on</span
+                        >
+                        <span class="font-label-lg text-label-lg"
+                            >Calle de la Innovación 22, Cyber-District, Madrid</span
+                        >
                     </div>
                 </div>
-            </section>
+                <!-- Map Preview -->
+                <div
+                    class="w-full h-40 rounded-DEFAULT overflow-hidden grayscale contrast-125 brightness-75 border border-[#004D54]"
+                >
+                    <img
+                        alt="Location Map"
+                        class="w-full h-full object-cover"
+                        data-alt="A stylized, high-contrast digital map interface showing the neighborhood around Bistró 22 in Madrid. The map uses a dark color palette with glowing neon teal streets and a prominent neon green pulse marker indicating the restaurant's location. The aesthetic is futuristic and data-driven, fitting a high-end cyber-gastronomy navigation experience."
+                        data-location="Madrid"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAywH4gE2Okio8iVS-Y4NHqavZRagVWp887paxqyJ4qeW2qYSqffpglMi2s-pNkPHJ5_cJqswlAZQKplz0oUaO7ptj88Wp9UHTHpw_oRtibxQD3sKrinEgtL3JgeAdHa8JbHMnv6jju0-WelktSnR_qRrW4JYFqhIqYDO451adlA34GaWzXxIR0PNRO4SVCK-pPMwDR8bq02c8mepfa9ELHD2ai0Tpwr3erthxrfVj7kTEj4wDa3KHXdl5DlcBcV86ZcJUTE8Tclhkh"
+                    />
+                </div>
+            </div>
+            <!-- Score Breakdown Cards -->
+            <div class="grid grid-cols-2 gap-4">
+                <div
+                    class="bg-surface-container-high p-md rounded-DEFAULT border border-white/5 text-center flex flex-col items-center gap-2"
+                >
+                    <span
+                        class="text-label-md font-label-md text-white/50 uppercase tracking-widest"
+                        >Food</span
+                    >
+                    <div
+                        class="w-16 h-16 rounded-full border-2 border-[#CCFF00] flex items-center justify-center neon-border-glow"
+                    >
+                        <span
+                            class="font-headline-md text-headline-md text-[#CCFF00]"
+                            >5.0</span
+                        >
+                    </div>
+                </div>
+                <div
+                    class="bg-surface-container-high p-md rounded-DEFAULT border border-white/5 text-center flex flex-col items-center gap-2"
+                >
+                    <span
+                        class="text-label-md font-label-md text-white/50 uppercase tracking-widest"
+                        >Location</span
+                    >
+                    <div
+                        class="w-16 h-16 rounded-full border-2 border-white/20 flex items-center justify-center"
+                    >
+                        <span
+                            class="font-headline-md text-headline-md text-white"
+                            >4.8</span
+                        >
+                    </div>
+                </div>
+                <div
+                    class="bg-surface-container-high p-md rounded-DEFAULT border border-white/5 text-center flex flex-col items-center gap-2"
+                >
+                    <span
+                        class="text-label-md font-label-md text-white/50 uppercase tracking-widest"
+                        >Atmosphere</span
+                    >
+                    <div
+                        class="w-16 h-16 rounded-full border-2 border-[#CCFF00] flex items-center justify-center neon-border-glow"
+                    >
+                        <span
+                            class="font-headline-md text-headline-md text-[#CCFF00]"
+                            >4.9</span
+                        >
+                    </div>
+                </div>
+                <div
+                    class="bg-surface-container-high p-md rounded-DEFAULT border border-white/5 text-center flex flex-col items-center gap-2"
+                >
+                    <span
+                        class="text-label-md font-label-md text-white/50 uppercase tracking-widest"
+                        >Comfort</span
+                    >
+                    <div
+                        class="w-16 h-16 rounded-full border-2 border-white/20 flex items-center justify-center"
+                    >
+                        <span
+                            class="font-headline-md text-headline-md text-white"
+                            >4.7</span
+                        >
+                    </div>
+                </div>
+            </div>
+        </aside>
+        <!-- Right Column: Description & Reviews -->
+        <article class="md:col-span-8 space-y-16">
+            <!-- Description -->
+            <div class="space-y-6">
+                <h2 class="font-headline-lg text-headline-lg text-white">
+                    The Future of Flavor
+                </h2>
+                <div class="prose prose-invert max-w-none">
+                    <p
+                        class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed"
+                    >
+                        Bistró 22 is not just a restaurant; it's a sensory
+                        gateway. Located in the heart of the tech district, we
+                        merge molecular gastronomy with traditional European
+                        roots. Our chefs use precision thermal control and
+                        hyper-fresh ingredients sourced from local vertical
+                        farms to create dishes that defy expectations.
+                    </p>
+                    <p
+                        class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed mt-4"
+                    >
+                        Every detail, from the haptic table surfaces to the
+                        reactive ambient lighting, is designed to complement our
+                        seasonal tasting menus. Experience a culinary journey
+                        where technology and tradition meet on the edge of
+                        tomorrow.
+                    </p>
+                </div>
+            </div>
             <!-- Reviews Section -->
-            <section class="px-margin py-xl">
-                <div class="flex justify-between items-end mb-xl">
-                    <div>
-                        <h3 class="font-headline-lg text-primary">
-                            Guest Experiences
-                        </h3>
-                        <p class="text-white/40 font-body-md mt-xs">
-                            Sharing the digital gastronomy journey
-                        </p>
-                    </div>
+            <section class="space-y-8">
+                <div
+                    class="flex items-center justify-between border-b border-white/10 pb-6"
+                >
+                    <h3
+                        class="font-headline-md text-headline-md text-[#CCFF00] uppercase tracking-tighter"
+                    >
+                        Guest Experiences
+                    </h3>
                     <button
-                        class="bg-[#CCFF00] text-[#001A1C] px-xl py-md rounded-full font-label-lg font-bold hover:shadow-[0_0_20px_rgba(204,255,0,0.4)] transition-all"
+                        class="px-8 py-3 bg-[#CCFF00] text-[#161e00] font-label-lg text-label-lg rounded-full hover:shadow-[0_0_20px_rgba(204,255,0,0.4)] transition-all active:scale-95"
                     >
                         Write a Review
                     </button>
                 </div>
-                <div class="space-y-lg">
+                <!-- Reviews Feed -->
+                <div class="space-y-6">
                     <!-- Review 1 -->
-                    <article
-                        class="glass-card rounded-lg p-lg border-l-4 border-[#CCFF00]"
+                    <div
+                        class="bg-surface-container rounded-lg p-lg border border-white/5 space-y-6"
                     >
-                        <div class="flex justify-between items-start mb-lg">
-                            <div class="flex items-center gap-md">
+                        <div class="flex items-start justify-between">
+                            <div class="flex items-center gap-4">
                                 <div
-                                    class="w-12 h-12 rounded-full overflow-hidden border-2 border-[#CCFF00]"
+                                    class="w-12 h-12 rounded-full overflow-hidden border border-[#CCFF00]"
                                 >
                                     <img
+                                        alt="User Avatar"
                                         class="w-full h-full object-cover"
-                                        data-alt="A portrait of a stylish male customer in a modern dark lounge environment. He is wearing high-end tech-wear inspired clothing. The lighting is low and moody with a subtle green backlight that makes him pop from the dark background. He has a satisfied, confident expression, fitting the premium aesthetic of the cyber-gastronomy brand."
-                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHbaVmZr_F8zRc3hjeOkkJnhvZhMWIcdUUFfAGgx1HPLC5fdwMx-To6OVK8o5h57GpqTLoqPXEnXwyUXAkYhLBEdfXYFPOtuYUyZDRHdmdsuh1Hoc1tZmFHkgRGPhhiRbfrSqiHjZUrEzZTyD-EratoWi6JZhXyGaC98vVHYZzerUi3yXdVklmkR1b06hD-E4-aaLUku_MqlRHG21B3uOMrVPP7Dhtayhm1cOiM0lPRXTBdmiQiPX57_uwnD31v9npwm7ieU0bVPUE"
+                                        data-alt="A portrait of a vibrant young woman with a creative professional look, featuring soft cinematic lighting and a dark background. She has a warm, sophisticated expression. The lighting includes subtle neon reflections that tie into the futuristic cyber-gastronomy theme of the review platform."
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4DKDyf16oy8wspK-whHMqRPmixVDYmVvc0MjZ790viwEWNZPbKe-lW4iLnqFrq1iLT2R5o0uqHTR6vj2_5lkf3tqFGMGzPkiMzTcxK-B5kWdyQQv6bGyjiTzaRxKVqYMxftzN6K0Xr0WTDt4jWQN1LMq6LFJkZL4KMmZMd9hpYYfGNn8FKB0FkE-5d7Mie-FUWczQsvSZ0pk0nVyhQlw32MIk_MSVt9ylGXwhm_isHWDqhm4D_lhXBNaBKcEGb6o6g8iHAvprU5O4"
                                     />
                                 </div>
                                 <div>
-                                    <p class="font-headline-md text-primary">
-                                        Julian R.
-                                    </p>
-                                    <p class="text-white/40 font-label-md">
-                                        Local Guide • 12 Reviews
+                                    <h4
+                                        class="font-label-lg text-label-lg text-white"
+                                    >
+                                        Elena Vance
+                                    </h4>
+                                    <p
+                                        class="text-xs text-white/40 uppercase tracking-widest"
+                                    >
+                                        October 14, 2024
                                     </p>
                                 </div>
                             </div>
                             <div
-                                class="flex items-center gap-xs px-md py-sm bg-[#CCFF00]/10 rounded-full text-[#CCFF00]"
+                                class="bg-[#CCFF00]/10 px-3 py-1 rounded-full border border-[#CCFF00]/20"
                             >
-                                <span
-                                    class="material-symbols-outlined text-sm"
-                                    data-icon="star"
-                                    style="font-variation-settings: 'FILL' 1;"
-                                    >star</span
+                                <span class="text-[#CCFF00] font-bold">5.0</span
                                 >
-                                <span class="font-bold">5.0</span>
                             </div>
                         </div>
                         <p
-                            class="font-body-lg text-on-background/90 italic leading-relaxed mb-lg"
+                            class="font-body-md text-body-md text-on-surface-variant"
                         >
-                            "The neon lighting and the soundscape create an
-                            atmosphere I haven't seen anywhere else. The
-                            truffle-infused nitrogen desserts were literally
-                            life-changing. A true cyber-gastronomy peak."
+                            "An absolute revelation. The liquid nitrogen
+                            gazpacho was a standout. The atmosphere feels like
+                            stepping into a high-budget sci-fi film, but the
+                            warmth of the service keeps it grounded and
+                            welcoming."
                         </p>
                         <div
-                            class="grid grid-cols-2 md:grid-cols-4 gap-md pt-lg border-t border-white/5"
+                            class="flex flex-wrap gap-4 pt-4 border-t border-white/5"
                         >
-                            <div class="text-center">
-                                <p
-                                    class="text-[10px] uppercase font-label-md text-white/30"
+                            <div class="flex items-center gap-2">
+                                <span
+                                    class="text-[10px] uppercase tracking-tighter text-white/40"
+                                    >Food:</span
                                 >
-                                    Food
-                                </p>
-                                <p class="text-[#CCFF00] font-bold">5.0</p>
+                                <span class="text-xs font-bold text-[#CCFF00]"
+                                    >5.0</span
+                                >
                             </div>
-                            <div class="text-center">
-                                <p
-                                    class="text-[10px] uppercase font-label-md text-white/30"
+                            <div class="flex items-center gap-2">
+                                <span
+                                    class="text-[10px] uppercase tracking-tighter text-white/40"
+                                    >Service:</span
                                 >
-                                    Service
-                                </p>
-                                <p class="text-primary font-bold">4.8</p>
+                                <span class="text-xs font-bold text-[#CCFF00]"
+                                    >4.9</span
+                                >
                             </div>
-                            <div class="text-center">
-                                <p
-                                    class="text-[10px] uppercase font-label-md text-white/30"
+                            <div class="flex items-center gap-2">
+                                <span
+                                    class="text-[10px] uppercase tracking-tighter text-white/40"
+                                    >Vibe:</span
                                 >
-                                    Vibe
-                                </p>
-                                <p class="text-[#CCFF00] font-bold">5.0</p>
+                                <span class="text-xs font-bold text-[#CCFF00]"
+                                    >5.0</span
+                                >
                             </div>
-                            <div class="text-center">
-                                <p
-                                    class="text-[10px] uppercase font-label-md text-white/30"
+                            <div class="flex items-center gap-2">
+                                <span
+                                    class="text-[10px] uppercase tracking-tighter text-white/40"
+                                    >Price:</span
                                 >
-                                    Price
-                                </p>
-                                <p class="text-primary font-bold">4.0</p>
+                                <span class="text-xs font-bold text-[#CCFF00]"
+                                    >4.5</span
+                                >
                             </div>
                         </div>
-                    </article>
+                    </div>
                     <!-- Review 2 -->
-                    <article class="glass-card rounded-lg p-lg">
-                        <div class="flex justify-between items-start mb-lg">
-                            <div class="flex items-center gap-md">
+                    <div
+                        class="bg-surface-container rounded-lg p-lg border border-white/5 space-y-6 opacity-80"
+                    >
+                        <div class="flex items-start justify-between">
+                            <div class="flex items-center gap-4">
                                 <div
-                                    class="w-12 h-12 rounded-full overflow-hidden border-2 border-white/20"
+                                    class="w-12 h-12 rounded-full overflow-hidden border border-white/10"
                                 >
                                     <img
+                                        alt="User Avatar"
                                         class="w-full h-full object-cover"
-                                        data-alt="A portrait of a chic young woman in a dimly lit, futuristic restaurant setting. Her face is softly illuminated by the glow of a nearby neon green table accent. She has a curious, exploratory look on her face. The background is a soft bokeh of deep teals and cyan lights, embodying the high-end digital lounge vibe of Bistró 22."
-                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbfwV1dnDjc7KPdfB9AtO4M_iKKBOpLlU535POQaNG7QO2VBKQl7CRmF-EvqKmqp8gqLhvdQy1uJglBx7OeHAqF-7ZZ4siVs2EduYzL2Gw7ln0i2nzL3HHk8IdFukK2H9G3PhxvGz5Rl1DsVmPwc1uG4CmO2VQdRYeraCVvRltEpdD1G146QOn9zdgukrXgg3o4dyp1AF1b64ylBVrBUKBD7A4JNuB1jjNqAdi-w1HQ-6Di7vKRAHyPzjq2KsS0OdJpZKwhNNOBbGW"
+                                        data-alt="A portrait of a mature man with a distinguished, scholarly appearance, captured with soft-key lighting against a deep dark background. His expression is thoughtful and appreciative. The visual style is consistent with a luxury digital environment, using high-fidelity photography and deep color tones."
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSHlFQKWIADn7q5v2JZ88LE1h67PmwLcXEx5w3heO3CCFJpMUrZlvUfUQQAaELOsC_878i1WnKPgzl17iqXN6bq4XoCOeaU0kwok5pfBkZ-_E-xl5Qx6iJy6frQAGSXba6vTKoZkKFeQR0N2lYwrutExcp35SQo_y1uPA1ahXP_ljYUEx_8oH8iQCkAJpCVTnYZ1HzIjOrPYF-om9WqKUKOLMzLP4K2pBtvYsbeR4O0eejwHuZcjsF9LG_Uvs-m_AVLpQmMjjlF4Br"
                                     />
                                 </div>
                                 <div>
-                                    <p class="font-headline-md text-primary">
-                                        Mariana V.
-                                    </p>
-                                    <p class="text-white/40 font-label-md">
-                                        Member since 2023
+                                    <h4
+                                        class="font-label-lg text-label-lg text-white"
+                                    >
+                                        Julian Castor
+                                    </h4>
+                                    <p
+                                        class="text-xs text-white/40 uppercase tracking-widest"
+                                    >
+                                        October 09, 2024
                                     </p>
                                 </div>
                             </div>
                             <div
-                                class="flex items-center gap-xs px-md py-sm bg-white/5 rounded-full text-white/70"
+                                class="bg-white/5 px-3 py-1 rounded-full border border-white/10"
                             >
-                                <span
-                                    class="material-symbols-outlined text-sm"
-                                    data-icon="star"
-                                    style="font-variation-settings: 'FILL' 1;"
-                                    >star</span
-                                >
-                                <span class="font-bold">4.5</span>
+                                <span class="text-white font-bold">4.8</span>
                             </div>
                         </div>
                         <p
-                            class="font-body-lg text-on-background/90 leading-relaxed mb-lg"
+                            class="font-body-md text-body-md text-on-surface-variant"
                         >
-                            "Waitlist was long but worth it. The attention to
-                            detail in the presentation is incredible. Every
-                            course feels like a piece of art."
+                            "The integration of digital elements in the dining
+                            experience is seamless. Highly recommend the
+                            deconstructed Iberian ham—it's a masterclass in
+                            texture."
                         </p>
                         <div
-                            class="grid grid-cols-2 md:grid-cols-4 gap-md pt-lg border-t border-white/5"
+                            class="flex flex-wrap gap-4 pt-4 border-t border-white/5"
                         >
-                            <div class="text-center">
-                                <p
-                                    class="text-[10px] uppercase font-label-md text-white/30"
+                            <div class="flex items-center gap-2">
+                                <span
+                                    class="text-[10px] uppercase tracking-tighter text-white/40"
+                                    >Food:</span
                                 >
-                                    Food
-                                </p>
-                                <p class="text-primary font-bold">5.0</p>
+                                <span class="text-xs font-bold text-white"
+                                    >4.8</span
+                                >
                             </div>
-                            <div class="text-center">
-                                <p
-                                    class="text-[10px] uppercase font-label-md text-white/30"
+                            <div class="flex items-center gap-2">
+                                <span
+                                    class="text-[10px] uppercase tracking-tighter text-white/40"
+                                    >Service:</span
                                 >
-                                    Service
-                                </p>
-                                <p class="text-primary font-bold">4.5</p>
+                                <span class="text-xs font-bold text-white"
+                                    >4.7</span
+                                >
                             </div>
-                            <div class="text-center">
-                                <p
-                                    class="text-[10px] uppercase font-label-md text-white/30"
+                            <div class="flex items-center gap-2">
+                                <span
+                                    class="text-[10px] uppercase tracking-tighter text-white/40"
+                                    >Vibe:</span
                                 >
-                                    Vibe
-                                </p>
-                                <p class="text-primary font-bold">4.5</p>
+                                <span class="text-xs font-bold text-white"
+                                    >5.0</span
+                                >
                             </div>
-                            <div class="text-center">
-                                <p
-                                    class="text-[10px] uppercase font-label-md text-white/30"
+                            <div class="flex items-center gap-2">
+                                <span
+                                    class="text-[10px] uppercase tracking-tighter text-white/40"
+                                    >Price:</span
                                 >
-                                    Price
-                                </p>
-                                <p class="text-primary font-bold">4.0</p>
+                                <span class="text-xs font-bold text-white"
+                                    >4.0</span
+                                >
                             </div>
                         </div>
-                    </article>
+                    </div>
                 </div>
             </section>
-        </main>
+        </article>
+    </section>
+</main>

@@ -1,7 +1,6 @@
 ---
 import "../styles/global.css";
 import SearchBar from "./ui/SearchBar.astro";
-
 ---
 
 <script>
@@ -39,15 +38,17 @@ import SearchBar from "./ui/SearchBar.astro";
 
 <header
   class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 py-4 bg-bg/90 backdrop-blur-md border border-stone-200/10 shadow-2xl rounded-br-4xl rounded-bl-4xl"
-id="headerAncla"
-  >
+  id="headerAncla"
+>
   <!-- Top Right/Center: App Name and Location -->
   <div class="flex items-center gap-4">
-    <h1
-      class="text-xl font-extrabold text-primary font-headline tracking-tight"
-    >
-      RateApp
-    </h1>
+    <a href="/">
+      <h1
+        class="text-xl font-extrabold text-primary font-headline tracking-tight"
+      >
+        RateApp
+      </h1>
+    </a>
   </div>
 
   <SearchBar />
@@ -78,13 +79,14 @@ id="headerAncla"
 
     <div class="flex items-center gap-2 pl-3.5">
       <a href="/login">
-      <div class="avatar avatar-online">
-        <div class="w-14 rounded-full">
-          <img
-            src="https://t3.ftcdn.net/jpg/06/19/26/46/360_F_619264680_x2PBdGLF54sFe7kTBtAvZnPyXgvaRw0Y.jpg"
-          />
-        </div>
-      </div></a>
+        <div class="avatar avatar-online">
+          <div class="w-14 rounded-full">
+            <img
+              src="https://t3.ftcdn.net/jpg/06/19/26/46/360_F_619264680_x2PBdGLF54sFe7kTBtAvZnPyXgvaRw0Y.jpg"
+            />
+          </div>
+        </div></a
+      >
     </div>
   </div>
 </header>

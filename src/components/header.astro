@@ -39,7 +39,8 @@ import SearchBar from "./ui/SearchBar.astro";
 
 <header
   class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 py-4 bg-bg/90 backdrop-blur-md border border-stone-200/10 shadow-2xl rounded-br-4xl rounded-bl-4xl"
->
+id="headerAncla"
+  >
   <!-- Top Right/Center: App Name and Location -->
   <div class="flex items-center gap-4">
     <h1
@@ -58,31 +59,32 @@ import SearchBar from "./ui/SearchBar.astro";
       <a
         href="/"
         id="home-link"
-        class="text-sm font-medium text-primary hover:text-fourty transition-colors active:scale-95 duration-300"
+        class="text-sm font-medium hover:text-fourty transition-colors active:scale-95 duration-300"
         >Home</a
       >
       <a
         href="/Rewards/"
         id="rewards-link"
-        class="text-sm font-medium text-primary hover:text-fourty transition-colors active:scale-95 duration-300"
+        class="text-sm font-medium hover:text-fourty transition-colors active:scale-95 duration-300"
         >Rewards</a
       >
       <a
         href="/Store/"
         id="store-link"
-        class="text-sm font-medium text-primary hover:text-fourty transition-colors active:scale-95 duration-300"
+        class="text-sm font-medium hover:text-fourty transition-colors active:scale-95 duration-300"
         >Store</a
       >
     </nav>
 
     <div class="flex items-center gap-2 pl-3.5">
+      <a href="/login">
       <div class="avatar avatar-online">
         <div class="w-14 rounded-full">
           <img
-            src="https://img.daisyui.com/images/profile/demo/gordon@192.webp"
+            src="https://t3.ftcdn.net/jpg/06/19/26/46/360_F_619264680_x2PBdGLF54sFe7kTBtAvZnPyXgvaRw0Y.jpg"
           />
         </div>
-      </div>
+      </div></a>
     </div>
   </div>
 </header>
